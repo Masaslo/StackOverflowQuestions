@@ -1,0 +1,257 @@
+:root{
+    --header-background: #363636;
+    --sidebar-background: #494949;
+    --default-text-color: #ffffff;
+    --default-content-background: #5c5c5c;
+
+    --button-color: #747474;
+    --button-color-hover: #616161;
+    --button-color-active: #5c5c5c;
+
+    --content-default-span: #4d4d4d;
+
+    --on-color: #39b83d;
+    --off-color: #ff5757;
+
+    --on-color-active: #27822a;
+    --off-color-active: #bd3e3e;
+
+    --info-color: #000000;
+}
+
+*{
+    margin: 0;
+    font-family: 'Inter';
+    color: var(--default-text-color);
+}
+
+header{
+    z-index: 2;
+
+    position: sticky;
+    height: 10%;
+
+    background-color: var(--header-background);
+    display: flex;
+    align-items: center;
+}
+#header-h1{
+    position: absolute;
+    left: 20px;
+
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 844;
+    font-size: 48px;
+    line-height: 58px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+
+    color: #FFFFFF;
+    font-variation-settings: 'slnt' -10;
+}
+
+#sidebar-content-container{
+    position: fixed;
+
+    z-index: 1;
+    width: 100%;
+    height: 90%;
+
+    background-size: cover;
+    background-image: url('../pics/bergen.jpg');
+    backdrop-filter: blur(10px);
+}
+
+sidebar{
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--sidebar-background);
+    width: 200px;
+
+    height: 100%;
+
+    margin: 20px;
+    margin-bottom: 20px;
+
+    border-radius: 20px 20px 0px 0px;
+}
+
+
+#sidebar-h1{
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--header-background);
+    border-radius: 20px 20px 0px 0px;
+}
+
+.sidebar-button{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color: var(--default-text-color);
+    padding: 30px;
+    background-color: var(--button-color);
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 0px;
+    border-radius: 23px;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.sidebar-button:hover{
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.40));
+
+}
+.sidebar-button:active{
+    background-color: var(--button-color-active);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0));
+}
+
+.content{
+    color: var(--default-text-color);
+    position: relative;
+    left: 240px;
+    width: 80%;
+    padding: 10px;
+    padding-top: 20px;
+
+}
+
+.grid-square{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+
+    max-width: 1200px;
+}
+
+.content-h1{
+    font-size: 30px;
+    background-color: var(--header-background);
+    width: 400px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+.content-1{
+    padding: 30px;
+    background-color: var(--default-content-background);
+    border-radius: 20px;
+
+}
+
+#start{
+    display: block;
+}
+
+#content-start-1{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flexbox-div{
+    padding: 10px;
+    background-color: var(--content-default-span);
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.percent-100-width
+{
+        width: 100%;
+}
+.flexbox-div > * {
+    flex: 1;
+    font-size: 20px;
+    text-align: center;
+}
+
+.on-span{
+    background-color: var(--on-color);
+    color: rgb(255, 255, 255);
+}
+
+.off-span{
+    background-color: var(--off-color);
+    color: white;
+}
+.info-span{
+    color: white;
+    background-color: var(--info-color);
+}
+
+.normal-button{
+    border: solid 0px;
+    margin: 5px;
+    padding: 5px;
+}
+.normal-button:active{
+    margin: 5px;
+    padding: 5px;
+    box-shadow: inset 0 0 0 1px #000; 
+}
+
+#off-button{
+    background-color: var(--off-color);
+}
+#off-button:hover{
+    background-color: var(--off-color-active);
+}
+#on-button:hover{
+    background-color: var(--on-color-active);
+}
+#on-button {
+    background-color: var(--on-color);
+}
+
+
+.actions{
+    border-radius: 20px;
+}
+
+.center-vertically{
+    /* display: flex;
+    align-items: center;
+    height: 80%;
+    float: left; */
+    position: relative;
+    top: -112;
+    left: 0px;
+    text-align: center;
+}
+
+
+#actions-header{
+    display: flex;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+.header-button{
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+    background-color: var(--button-color);
+    border: 0;
+}
+
+.header-button:hover{
+    background-color: var(--button-color-hover);
+}
+
+.actions-tab{
+    margin-top: 20px;
+}

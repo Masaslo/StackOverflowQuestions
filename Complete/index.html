@@ -1,0 +1,142 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="battery.css" rel="stylesheet">
+        <link href="draw.css" rel="stylesheet">
+        <script src="script.js"></script>
+
+    </head>
+    <body onload="startButton(), setBatteryPercentage(100), drawButton(), canvasFunction()">
+        <header><h1 id="header-h1">Bot Ross</h1></header>
+        <div id="sidebar-content-container">
+            <sidebar>
+                <div id="sidebar-h1">Control Panel</div>
+                <button class="sidebar-button" id="start-button" onclick="startButton()">Start</button>
+                <button class="sidebar-button" id="actions-button" onclick="actionsButton()">Actions</button>
+                <button class="sidebar-button" id="about-button" onclick="aboutButton()">About</button>
+            </sidebar>
+
+            <div class="content">
+                <div id="start">
+                    <h1 class="content-h1">Start</h1>
+                        <div class="grid-square">
+                            <div class="content-1" id="content-start-1" style="grid-row: 1 / span 2;">
+                                <h1>System info:</h1>
+                                <div class="flexbox-div percent-100-width">
+                                    <span class="content-span">Power:</span>
+                                    <span class="on-span" id="onOff">On</span>
+                                </div>
+                                <div class="flexbox-div percent-100-width">
+                                    <span class="content-span">State:</span>
+                                    <span class="on-span" id="sleepAwake">Asleep</span>
+                                </div>
+                                <div class="flexbox-div percent-100-width">
+                                    <span class="content-span">Busy:</span>
+                                    <span class="off-span" id="busy?">No</span>
+                                </div>
+
+
+                                <div class="flexbox-div percent-100-width" style="margin-top: 40px; margin-bottom: 0px;">
+                                    <span class="content-span">Conntetion:</span>
+                                    <span class="on-span" id="connected">Connected!</span>
+                                </div>
+                                <div class="flexbox-div percent-100-width" style="margin-top: 0px">
+                                    <span class="content-span">Connected to:</span>
+                                    <span class="info-span" id="connectedto">192.168.3.15</span>
+                                </div>
+                            </div>
+                            <div class="content-1" style="grid-column: 2 / span 3;">
+                                <h1>Basic Controls</h1>
+                                <div style=" display: flex; flex-direction: row; gap: 20px;">
+                                    <div style="width: 300px">
+                                        <h2 style="text-align:center; margin-top: 10px;">Power</h2>
+                                        <div class="flexbox-div">
+                                            <button class="normal-button" id="off-button" onclick="offButton()">Turn off</button>
+                                            <button class="normal-button" id="on-button" onclick="onButton()">Turn off</button>
+                                        </div>
+        
+                                        <h2 style="text-align:center; margin-top: 10px;">State</h2>
+                                        <div class="flexbox-div">
+                                            <button class="normal-button" id="off-button" onclick="offButton()">Sleep</button>
+                                            <button class="normal-button" id="on-button" onclick="onButton()">Wake up</button>
+                                        </div>
+                                    </div>
+
+                                    <div style="width: 300px">
+                                        <h2 style="text-align:center; margin-top: 10px;">Power</h2>
+                                        <div class="flexbox-div">
+                                            <button class="normal-button" id="off-button" onclick="offButton()">Turn off</button>
+                                            <button class="normal-button" id="on-button" onclick="onButton()">Turn off</button>
+                                        </div>
+        
+                                        <h2 style="text-align:center; margin-top: 10px;">State</h2>
+                                        <div class="flexbox-div">
+                                            <button class="normal-button" id="sleep-button" onclick="offButton()">sleep</button>
+                                            <button class="normal-button" id="wake-button" onclick="onButton()">Wake up</button>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-1" style="width: 200px; height: 240px;">
+                                <h1 style="text-align: center;">Battery</h1>
+                                    <div class="circle-container">
+                                        <svg id="circlesvf" viewBox="-2 0 110 110">
+                                            <circle id="circle" cx="52" cy="52" r="48" stroke-dasharray="50, 300"></circle>
+                                          </svg>
+                                    </div>
+                                    <div class="center-vertically">
+                                        <h3 id="percentageh3">100%</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                <div id="actions" style="display: none;" >
+                    <div id="actions-header" class="content-1">
+                        <button class="header-button" id="draw-button" onclick="drawButton()">Draw</button>
+                        <button class="header-button" id="animate-button" onclick="animateButton()">Animate</button>
+                        <button class="header-button" id="say-button" onclick="sayButton()">Say</button>
+                    </div>
+                    <div class="content-1 actions-tab" id="draw-tab">
+                        <section class="container">
+                            <div id="toolbar">
+                                <h1>Draw.</h1>
+                                <label for="stroke">Stroke</label>
+                                <label for="lineWidth">Line Width</label>
+                                <input id="lineWidth" name='lineWidth' type="number" value="5">
+                                <button id="clear">Clear</button>
+                                <button onclick="canvasFunction()">Reset</button>
+                            </div>
+                            <div class="drawing-board">
+                                <canvas id="drawing-board" style="width: 502px; height: 502px;"></canvas>
+                            </div>
+                        </section>
+
+                    </div>
+                    <div class="content-1 actions-tab" id="animate-tab">
+
+                    </div>
+                    <div class="content-1 actions-tab" id="say-tab">
+
+                    </div>
+                </div>
+                <div id="about" style="display: none;">
+                    <h1 class="content-h1">About</h1>
+                    <div id="actions-content" class="content-1">
+                        <h1>Bot Ross</h1>
+                        <p>
+                            Dit de User Interface website van onze robot "Bot Ross"
+                            <br>
+                            Het doel van dit project is om ouderen te entertainen door middel van kunst.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
